@@ -7,16 +7,17 @@ router.get("/ninjas", (req, res) => {
 
 //add a new ninja to db
 router.post("/ninjas", (req, res) => {
-  res.send({ type: "POST" });
+  console.log(req.body);
+  res.send({ type: "POST", name: req.body.name, rank: req.body.rank });
 });
 
 //update a ninja in db
-router.get("/ninjas/:id", (req, res) => {
+router.put("/ninjas/:id", (req, res) => {
   res.send({ type: "PUT" });
 });
 
 //delete a ninja from db
-router.get("/ninjas/:id", (req, res) => {
+router.delete("/ninjas/:id", (req, res) => {
   res.send({ type: "DELETE" });
 });
 
